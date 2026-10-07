@@ -1,0 +1,14 @@
+{
+  "name": "resflex-recruiting",
+  "owner": {
+    "name": "Dave Mitchell",
+    "url": "https://github.com/dave-mitchell"
+  },
+  "plugins": [
+    {
+      "name": "resflex-recruiting",
+      "source": "./",
+      "description": "Run your Velocity/Resflex candidate pipeline from Claude: outreach drafts, interview booking, and Resflex Hiring Step updates."
+    }
+  ]
+}

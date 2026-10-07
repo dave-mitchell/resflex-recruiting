@@ -1,0 +1,75 @@
+# resflex-recruiting configuration
+#
+# Copy to ~/.config/resflex-recruiting/config.yaml and replace every value.
+# This file holds your company's details and email wording. Keep your copy out of shared repos.
+#
+# Template placeholders:
+#   {first_name}        candidate's first name
+#   {role_phrase}       from the assignment, e.g. "the iOS space"
+#   {day}               e.g. "Thursday, Oct 8"
+#   {time}              interview start in sender.timezone, e.g. "9:00am"
+#   {sender_tz}         sender.timezone_label
+#   {candidate_time}    interview start in the candidate's zone
+#   {candidate_tz}      the assignment's candidate_timezone_label
+#   {manager}           hiring manager's first name
+#   {duration}          interview.duration_minutes
+#   {sender_name}       sender.name
+#   {date}              today, M/D
+
+company: Acme Inc.
+
+sender:
+  name: Jane Doe
+  email: jane@acme.example
+  timezone: America/Denver          # IANA name
+  timezone_label: MT
+  signature: |
+    Jane Doe
+    CTO, Acme Inc.
+    555-0100
+
+mail_provider: microsoft365         # the only supported value today
+
+hiring_managers:
+  - key: alex
+    name: Alex Smith
+    email: alex@acme.example
+
+recruiter:                          # your Velocity contact
+  name: Pat Recruiter
+  email: pat@velocityresourcegroup.example
+
+assignments:                        # one entry per Resflex assignment (role)
+  - title: Senior Mobile Engineer - iOS
+    resflex_id: 12345               # the a= value in the Resflex candidate-list URL
+    hiring_manager: alex            # key from hiring_managers
+    role_phrase: the iOS space
+    candidate_timezone: America/Sao_Paulo
+    candidate_timezone_label: BRT
+
+interview:
+  duration_minutes: 30
+  subject: Acme Intro Call
+  teams_link: true
+  organizer_attends: true           # false = only the candidate and hiring manager must be free
+  preferred_hours:                  # in sender.timezone
+    start: "08:00"
+    end: "16:00"
+
+follow_up:
+  after_business_days: 5
+
+templates:
+  intro_subject: Hello from Acme!
+  intro_body: |
+    Hello {first_name}!  I got your contact information from Velocity Resource Group, whom I believe you spoke with recently.  I'm the CTO at Acme.  I'd love to discuss an opportunity we have in {role_phrase}.  Do you have time in the next few days for a call to introduce ourselves and discuss the role?  If so, can you please list a few available times?  I'm in US Mountain Time.
+  invite_reply_body: |
+    I just sent an invitation to meet {day} at {time} {sender_tz} ({candidate_time} {candidate_tz}).  Please let me know if that time doesn't work and we'll find another.
+  follow_up_body: |
+    Hi {first_name}, just following up on my note below. Do you have a few times in the next week for a quick intro call?
+
+notes:                              # Resflex Hiring Step comments
+  contacted: "Intro email sent {date} by {sender_name}, asked for availability."
+  video_interview: "{duration}-min intro video interview with {manager}, {day} {time} {sender_tz} / {candidate_time} {candidate_tz}."
+  no_show: "Missed {day} interview."
+  non_responsive: "No reply to intro email or follow-up."
