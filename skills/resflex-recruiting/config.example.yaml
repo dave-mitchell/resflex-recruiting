@@ -61,6 +61,9 @@ follow_up:
 
 templates:
   intro_subject: Hello from Acme!
+  # A phrase that appears in every intro email, even when you change the subject.
+  # The scan searches your sent mail for it to find candidates you've contacted.
+  intro_search_phrase: "Velocity Resource Group"
   intro_body: |
     Hello {first_name}!  I got your contact information from Velocity Resource Group, whom I believe you spoke with recently.  I'm the CTO at Acme.  I'd love to discuss an opportunity we have in {role_phrase}.  Do you have time in the next few days for a call to introduce ourselves and discuss the role?  If so, can you please list a few available times?  I'm in US Mountain Time.
   invite_reply_body: |

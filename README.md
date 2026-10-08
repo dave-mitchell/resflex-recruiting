@@ -43,7 +43,7 @@ To set it up, ask Claude "set up resflex-recruiting". It walks through [`config.
 |---|---|
 | "Where are we with candidates?" | A status sweep compares Resflex, mail and calendar, and fixes Hiring Steps that are out of date. |
 | "Reach out to Ana Lima and Bruno Costa" | Claude checks neither has been contacted, saves an intro draft for each, then sets them to Contacted once you've sent. |
-| "Any candidate replies?" / "Book Ana" | Claude reads the reply, finds a slot inside the times the candidate offered, books it with your OK, and drafts the reply. |
+| "Any candidate replies?" / "Book Ana" | Claude reads the reply and finds a slot inside the times the candidate offered. After one confirmation from you, it sends the Teams invite and then your "invite sent" reply. |
 | "Run a recruiting scan" | A read-only summary of who needs you today. It's built for scheduled check-ins. |
 
 ## What Claude will and won't do on its own
