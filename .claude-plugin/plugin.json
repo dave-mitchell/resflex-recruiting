@@ -1,6 +1,6 @@
 {
   "name": "resflex-recruiting",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Hiring-manager assistant for candidates sourced by Velocity Resource Group via Resflex: keeps Resflex Hiring Steps in sync with Outlook mail and calendar, drafts intro emails, books intro interviews and drafts the reply.",
   "author": {
     "name": "Dave Mitchell",

@@ -4,6 +4,8 @@ Resflex has no public API, so this skill drives the web UI through Claude in Chr
 
 Load the Chrome tools in one batch before starting (`tabs_context_mcp`, `navigate`, `computer`, `find`, `get_page_text`, `browser_batch`), and work in a tab of the MCP tab group rather than the user's own tabs.
 
+**Don't ask the user to open or point you to a Resflex tab.** `tabs_context_mcp` reporting no tab group just means this session hasn't opened one yet — it says nothing about whether Resflex is signed in. The sign-in cookie lives in the Chrome profile, not in any one tab, so a brand-new tab you open yourself (`navigate` with no `tabId`, or `tabs_create_mcp`) inherits it automatically: navigate straight to the Interested list URL and check the page text/title for "Signed in as" before concluding you need the user. Only ask the user to sign in if that fresh tab actually renders a login form — that's the one case a new tab can't route around.
+
 ## Pages
 
 | Page | URL |
