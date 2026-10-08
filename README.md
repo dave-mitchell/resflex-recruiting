@@ -63,6 +63,17 @@ To set it up, ask Claude "set up resflex-recruiting". It walks through [`config.
 | Rescheduling and conflict handling | Basic: Claude proposes new times and waits for you |
 | Google Workspace mail and calendar | Not yet supported |
 
+## Releasing (maintainer)
+
+Edit the files, then run:
+
+```bash
+./release.sh "What changed"            # 0.1.0 -> 0.1.1
+./release.sh "New phase" minor         # 0.1.0 -> 0.2.0
+```
+
+The script shows the files it will commit and asks before going ahead. It then bumps `.claude-plugin/plugin.json`, commits, pushes, and updates the installed plugin. Run `/reload-plugins` afterwards. Installed users get the change with `claude plugin marketplace update resflex-recruiting && claude plugin update resflex-recruiting@resflex-recruiting`.
+
 ## Contributing
 
 Issues and pull requests are welcome. Resflex steps are driven through its web UI, so if Resflex changes its layout, update `skills/resflex-recruiting/references/resflex-ui.md`.
